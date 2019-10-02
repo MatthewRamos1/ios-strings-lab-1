@@ -108,24 +108,21 @@ Write code that switches on a string, given the following conditions:
 
 ```swift
 
-let myStringSeven = "Hello world!"
-var counter = 0
-switch true {
-case myStringSeven.count % 2 == 0:
-    for char in myStringSeven {
-        print(char)
+let message = "Hello World!"
+
+switch message {
+case message where message.count % 2 == 0:
+    for char in message {
+        print(char, terminator: "")
     }
 default:
-    for char in myStringSeven {
-        if counter % 2 == 0 {
-            print(char)
-            counter += 1
-        } else {
-            counter += 1
-            
-        }
-    }
+    for (index,char) in message.enumerated()
+        where index % 2 == 1 {
+            print(char, terminator: "")
 }
+
+}
+
 
 ```
 ***
@@ -141,6 +138,35 @@ let char: Character = "C"
 ## Question 8
 
 Build five pairs of **canonically equivalent** strings, the first of each being a pre-composed character and the second being one that uses combinable unicode scalars. Show that they are equivalent.
+
+```swift
+
+let characterLowerA = "a"
+let unicodeLowercaseA = "\u{0061}"
+if unicodeLowercaseA == characterLowerA {
+    print("\(characterLowerA) has the same value as unicode \(unicodeLowercaseA)")
+}
+let characterLowerT = "t"
+let unicodeLowerT = "\u{0074}"
+if unicodeLowerT == characterLowerT {
+    print("\(characterLowerT) has the same value as unicode \(unicodeLowercaseT)")
+}
+let characterLowerD = "d"
+let unicodeLowerD = "\u{0064}"
+if unicodeLowerD == characterLowerD {
+    print("\(characterLowerD) has the same value as unicode \(unicodeLowerD)")
+}
+let exclaimCharacter = "!"
+let unicodeExclaim = "\u{0021}"
+if  unicodeExclaim == exclaimCharacter {
+    print("\(exclaimCharacter) has the same value as unicode \(unicodeExclaim) ")
+}
+let characterUpperA = "A"
+let unicodeUpperA = "\u{0041}"
+if unicodeUpperA == characterUpperA {
+    print("\(characterUpperA) has the same value as unicode \(unicodeUpperA)")
+}
+```
 
 ***
 ## Question 9
@@ -187,18 +213,6 @@ Flower Box:
 
 // Answer:
 
-print("""
-- - - - - - - - - - -
-| \u{2698} | \u{2698} | \u{2698} | \u{2698} | \u{2698} |
-| \u{2698} | \u{2698} | \u{2698} | \u{2698} | \u{2698} |
-| \u{2698} | \u{2698} | \u{2698} | \u{2698} | \u{2698} |
-| \u{2698} | \u{2698} | \u{2698} | \u{2698} | \u{2698} |
-| \u{2698} | \u{2698} | \u{2698} | \u{2698} | \u{2698} |
-| \u{2698} | \u{2698} | \u{2698} | \u{2698} | \u{2698} |
-| \u{2698} | \u{2698} | \u{2698} | \u{2698} | \u{2698} |
-- - - - - - - - - - -
-
-""")
 
 ```
 
@@ -217,6 +231,21 @@ Chess Board:
 
 ♟ ♟ ♟ ♟ ♟ ♟ ♟ ♟
 ♜ ♞ ♝ ♛ ♚ ♝ ♞ ♜
+
+// Answer:
+
+print(
+"""
+\u{2656} \u{2658} \u{2657} \u{2655} \u{2654} \u{2657} \u{2658} \u{2656}
+\u{2659} \u{2659} \u{2659} \u{2659} \u{2659} \u{2659} \u{2659} \u{2659}
+
+
+
+
+\u{265F} \u{265F} \u{265F} \u{265F} \u{265F} \u{265F} \u{265F} \u{265F}
+\u{265C} \u{265E} \u{265D} \u{265B} \u{265A} \u{265D} \u{265E} \u{265C}
+""")
+
 ```
 
 ***
@@ -237,6 +266,23 @@ Input:
 Expected values:
 `replacedString = "R*plac* th* l*tt*r * with *"`
 
+```swift
+
+var aString = "Replace the letter e with *"
+var replacedString = ""
+
+for char in aString {
+    if char == "e" {
+        replacedString += "*"
+        
+    } else {
+        replacedString += String(char)
+        
+    }
+}
+
+
+```
 ***
 ## Question 15
 
@@ -279,6 +325,22 @@ occasional \() by late afternoon. Wind velocity will
 be \() miles an hour, and the high temperature should
 be around \() degrees. So, if you're going out, you had
 better plan on wearing your \()".
+
+Answer:
+var geographicLocation: String = "Topeka"
+var adjective1: String = "cold"
+var pluralNoun1: String = "gas"
+var adjective2: String = "cyclonic"
+var pluralNoun2: String = "fires"
+var number1: Int = 99
+var number2: Int = 101
+var articleOfClothing: String = "fez"
+
+var madLib = "Here is tomorrow's weather report for \(geographicLocation) and vicinity. Early tomorrow, a \(adjective1)-front will collide with a mass of hot \(pluralNoun1) moving from the north. This means we can expect \(adjective2) winds and occasional \(pluralNoun2) by late afternoon. Wind velocity will be \(number1) miles an hour, and the high temperature should be around \(number2) degrees. So, if you're going out, you had better plan on wearing your \(articleOfClothing)."
+
+print(madLib)
+
+
 ```
 
 ***
