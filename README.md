@@ -336,7 +336,7 @@ var number1: Int = 99
 var number2: Int = 101
 var articleOfClothing: String = "fez"
 
-var madLib = "Here is tomorrow's weather report for \(geographicLocation) and vicinity. Early tomorrow, a \(adjective1)-front will collide with a mass of hot \(pluralNoun1) moving from the north. This means we can expect \(adjective2) winds and occasional \(pluralNoun2) by late afternoon. Wind velocity will be \(number1) miles an hour, and the high temperature should be around \(number2) degrees. So, if you're going out, you had better plan on wearing your \(articleOfClothing)."
+var madLib = "Here is tomorrow's weather report for \(geographicLocation) and vicinity. Early tomorrow, a \(adjective1)-front \nwill collide with a mass of hot \(pluralNoun1) moving from the north. This means we can expect \n\(adjective2) winds and occasional \(pluralNoun2) by late afternoon. Wind velocity will be \(number1) miles \nan hour, and the high temperature should be around \(number2) degrees. So, if you're going out, \nyou had better plan on wearing your \(articleOfClothing)."
 
 print(madLib)
 
