@@ -213,6 +213,24 @@ Flower Box:
 
 // Answer:
 
+var flower = " \u{2698}"
+
+for _ in 1...11 {
+    print("-", terminator: " ")
+}
+print()
+for _ in 1...6 {
+    for _ in 1...5 {
+        print("|", terminator: flower + " ")
+    }
+    print("|")
+}
+for _ in 1...11 {
+print("-", terminator: " ")
+
+}
+
+
 
 ```
 
@@ -293,6 +311,13 @@ var aString = "this string has 29 characters"
 var reverse = ""
 
 // Your code here
+
+var aString = "this string has 29 characters"
+var reverse = ""
+
+reverse = String(aString.reversed())
+print(reverse)
+
 ```
 
 Example:
