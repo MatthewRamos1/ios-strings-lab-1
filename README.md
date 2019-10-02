@@ -14,20 +14,71 @@
 Write code that prints out all the numbers from 1 to 10 as a single string.
 (Hint: the `String()` function can convert an Int to a String)
 
+```swift
+
+var str = ""
+
+for num in 1...10 {
+    str += String(num)
+}
+print(str)
+
+
+
+```
+
 ***
 ## Question 2
 
 Write code that prints out all the even numbers from 5 to 51 as a single string.
+
+```swift
+
+var str = ""
+
+for num in 5...51 {
+    if num % 2 == 0 {
+    str += String(num) + " "
+    }
+}
+print(str)
+
+```
+
+
+
 
 ***
 ## Question 3
 
 Write code that prints out every number ending in 4 between 1 and 60 as a single string.
 
+```swift
+
+var str = ""
+
+for num in 1...60 {
+    if num % 10 == 4 {
+    str += String(num) + " "
+    }
+}
+print(str)
+
+```
+
 ***
 ## Question 4
 
 Print each character in the string `"Hello world!"`
+
+```string
+
+var hello = "Hello world!"
+
+for char in hello {
+    print(char)
+}
+```
 
 ***
 ## Question 5
@@ -36,6 +87,17 @@ Print out the last character in the string below.  You cannot use the Character 
 
 `let myStringSeven = "Hello world!"`
 
+```swift
+
+let myStringSeven = "Hello world!"
+
+let lastIndex = myStringSeven.endIndex
+let lastCharacterIndex = myStringSeven.index(before: lastIndex)
+let lastCharacter = myStringSeven[lastCharacterIndex]
+print(lastCharacter)
+
+```
+
 ***
 ## Question 6
 
@@ -43,10 +105,37 @@ Write code that switches on a string, given the following conditions:
 - If the string's length is even, print out every character.
 - If the string's length is odd, print out every other character.
 
+
+```swift
+
+let myStringSeven = "Hello world!"
+var counter = 0
+switch true {
+case myStringSeven.count % 2 == 0:
+    for char in myStringSeven {
+        print(char)
+    }
+default:
+    for char in myStringSeven {
+        if counter % 2 == 0 {
+            print(char)
+            counter += 1
+        } else {
+            counter += 1
+            
+        }
+    }
+}
+
+```
 ***
 ## Question 7
 
 Initialize a String with a character. Show that it is a Character, and not another String, that you're using to initialize it.
+
+Answer: 
+
+let char: Character = "C"
 
 ***
 ## Question 8
@@ -57,6 +146,12 @@ Build five pairs of **canonically equivalent** strings, the first of each being 
 ## Question 9
 
 **Using only Unicode**, print out `"HELLO WORLD!"`
+
+```swift
+
+print( "\u{0048}\u{0045}\u{004C}\u{004C}\u{004F}\u{0020}\u{0057}\u{004F}\u{0052}\u{004C}\u{0044}\u{0021}")
+
+```
 
 ***
 ## Question 10
@@ -89,6 +184,22 @@ Flower Box:
 | ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
 | ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
 - - - - - - - - - - -
+
+// Answer:
+
+print("""
+- - - - - - - - - - -
+| \u{2698} | \u{2698} | \u{2698} | \u{2698} | \u{2698} |
+| \u{2698} | \u{2698} | \u{2698} | \u{2698} | \u{2698} |
+| \u{2698} | \u{2698} | \u{2698} | \u{2698} | \u{2698} |
+| \u{2698} | \u{2698} | \u{2698} | \u{2698} | \u{2698} |
+| \u{2698} | \u{2698} | \u{2698} | \u{2698} | \u{2698} |
+| \u{2698} | \u{2698} | \u{2698} | \u{2698} | \u{2698} |
+| \u{2698} | \u{2698} | \u{2698} | \u{2698} | \u{2698} |
+- - - - - - - - - - -
+
+""")
+
 ```
 
 ***
